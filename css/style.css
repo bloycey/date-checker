@@ -1,0 +1,49 @@
+* {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+  }
+
+  #hero-text, #hero-text input {
+      font-size: 50px;
+  }
+
+  #hero-text input {
+    border: 0;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    outline: none;
+    font-weight: 600;
+    opacity: 0.4;
+}
+
+#hero-text .time-input {
+    width: 120px;
+}
+
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
