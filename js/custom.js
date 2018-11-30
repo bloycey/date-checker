@@ -4,6 +4,7 @@ $(document).ready(function(){
     let dueDate;
     let numDaysRaw;
     let numDaysNoWeekends;
+    let hoursPerDay;
 
     const todaysDate = new Date();
     const differenceInCalendarDays = dateFns.differenceInCalendarDays;
@@ -18,18 +19,20 @@ $(document).ready(function(){
 
     $('.date-input').on("change", function(){
         dueDate = $(this).val();
-        calculateTime(dueDate, todaysDate);
+        if (hours !== undefined) {
+            calculateTime(dueDate, todaysDate, hours);
+            $('#total').text(hoursPerDay.toFixed(1));
+        }
     })
 
-    function calculateTime(endDate, startDate) {
+    function calculateTime(endDate, startDate, numHours) {
         const allDays = eachDay(startDate, endDate);
         numDaysRaw = allDays.length;
         const noWeekends = allDays.filter(function(date){
             return isWeekend(date) == false
         });
         numDaysNoWeekends = noWeekends.length;
-        console.log(numDaysRaw);
-        console.log(numDaysNoWeekends);
+        hoursPerDay = hours / numDaysNoWeekends;
     }
 
 })
