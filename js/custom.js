@@ -10,11 +10,6 @@
     let includeWeekends = false;
     let safetyDays = 0;
 
-    // Set results arrays
-
-    const medNumbers = [];
-    const highNumbers = [];
-
     // Set DOM variables
     const domTime = document.querySelector(".time-input");
     const domDate = document.querySelector(".date-input");
@@ -29,11 +24,8 @@
     const todaysDate = new Date();
     const tomorrowsDate = addDays(todaysDate, 1);
     const minDate = tomorrowsDate.toISOString().substring(0,10);
-    console.log(minDate);
     domDate.setAttribute("min", minDate);
     domDate.setAttribute("value", minDate);
-    
-
 
     // Set up DOM interactions
     domSafetyCheck.addEventListener("change", () => {
@@ -125,5 +117,4 @@
             hoursPerDay = (hours / numDaysRaw).toFixed(1);
         }
     }
-
 })();
